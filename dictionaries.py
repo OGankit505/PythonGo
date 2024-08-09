@@ -76,3 +76,36 @@ for key, value in my_dict.items():
     other_dict = {'age': 30, 'city': 'London'}
     my_dict.update(other_dict)
     print(my_dict)  # Output: {'name': 'John', 'age': 30, 'city': 'London'}
+    # Creating a nested dictionary
+    nested_dict = {'person1': {'name': 'John', 'age': 25}, 'person2': {'name': 'Alice', 'age': 30}}
+
+    # Accessing values in a nested dictionary
+    print(nested_dict['person1']['name'])  # Output: John
+
+    # Modifying values in a nested dictionary
+    nested_dict['person2']['age'] = 31
+    print(nested_dict['person2']['age'])  # Output: 31
+
+    # Adding a new key-value pair in a nested dictionary
+    nested_dict['person1']['occupation'] = 'Engineer'
+    print(nested_dict)  # Output: {'person1': {'name': 'John', 'age': 25, 'occupation': 'Engineer'}, 'person2': {'name': 'Alice', 'age': 31}}
+
+    # Removing a key-value pair in a nested dictionary
+    del nested_dict['person2']['name']
+    print(nested_dict)  # Output: {'person1': {'name': 'John', 'age': 25, 'occupation': 'Engineer'}, 'person2': {'age': 31}}
+
+    # Checking if a key exists in a nested dictionary
+    if 'age' in nested_dict['person1']:
+        print('Age exists in the nested dictionary')
+
+    # Iterating over keys in a nested dictionary
+    for person in nested_dict:
+        print(person)  # Output: person1, person2
+
+    # Iterating over values in a nested dictionary
+    for person in nested_dict.values():
+        print(person)  # Output: {'name': 'John', 'age': 25, 'occupation': 'Engineer'}, {'age': 31}
+
+    # Iterating over key-value pairs in a nested dictionary
+    for person, details in nested_dict.items():
+        print(person, details)  # Output: person1 {'name': 'John', 'age': 25, 'occupation': 'Engineer'}, person2 {'age': 31}
